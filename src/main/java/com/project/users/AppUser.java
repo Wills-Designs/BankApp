@@ -1,4 +1,4 @@
-package com.revature.users;
+package com.project.users;
 
 import java.util.Objects;
 

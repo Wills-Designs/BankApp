@@ -1,4 +1,4 @@
-package com.revature.exceptions;
+package com.project.exceptions;
 
 /** exception that occurs if authentication of credentials fails */
 public class AuthenticationException extends RuntimeException {

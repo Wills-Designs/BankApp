@@ -1,7 +1,7 @@
-package com.revature.screens;
-import com.revature.users.AppUser;
-import com.revature.users.UserService;
-import static com.revature.BankApp.app;
+package com.project.screens;
+import com.project.users.AppUser;
+import com.project.users.UserService;
+import static com.project.BankApp.app;
 
 /** registration screen for new users to create an account */
 public class RegisterScreen extends Screen {

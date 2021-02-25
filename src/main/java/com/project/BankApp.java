@@ -1,5 +1,5 @@
-package com.revature;
-import com.revature.utilities.AppState;
+package com.project;
+import com.project.utilities.AppState;
 
 /**
  * @author William Soriano

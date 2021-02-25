@@ -1,4 +1,4 @@
-package com.revature.exceptions;
+package com.project.exceptions;
 /** exception that handles issues with duplicates  */
 public class ResourcePersistenceException extends RuntimeException{
 

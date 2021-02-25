@@ -1,11 +1,12 @@
-package com.revature.screens;
-import com.revature.users.AppUser;
-import com.revature.users.UserService;
-import com.revature.utilities.ConnectionFactory;
+package com.project.screens;
+import com.project.BankApp;
+import com.project.users.AppUser;
+import com.project.users.UserService;
+import com.project.utilities.ConnectionFactory;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import static com.revature.BankApp.app;
 
 /** withdraw screen where user inputs how much
  * they are removing from the account
@@ -27,7 +28,7 @@ public class WithdrawScreen extends Screen {
     @Override
     public void render() {
 
-        AppUser user = app().getCurrentSession().getSessionUser();
+        AppUser user = BankApp.app().getCurrentSession().getSessionUser();
         String balance = null;
         String withAmount;
 
@@ -44,13 +45,13 @@ public class WithdrawScreen extends Screen {
 
             System.out.println("\n\n\n\n\n\nPlease enter the amount to be withdrawn : ");
             System.out.print("\n Enter Quantity ->$");
-            withAmount = app().getConsole().readLine();
+            withAmount = BankApp.app().getConsole().readLine();
             double number = Double.parseDouble(withAmount);
             double currBalance = Double.parseDouble(balance);
 
             if (number > currBalance){
                 System.out.println("Amount exceeds your current balance, of $" + currBalance + ", please enter a different amount");
-                app().getRouter().navigate("/withdrawl");
+                BankApp.app().getRouter().navigate("/withdrawl");
             }
 
             System.out.println("\n\n\n\n\n\n\n\n\nAre you sure you want to withdraw $" + number);
@@ -61,7 +62,7 @@ public class WithdrawScreen extends Screen {
             System.out.println("[3] Log Off\n\n\n");
             System.out.print("\n Enter Selection -> ");
 
-            String userSelection = app().getConsole().readLine();
+            String userSelection = BankApp.app().getConsole().readLine();
 
             switch (userSelection) {
                 case "1":
@@ -74,30 +75,30 @@ public class WithdrawScreen extends Screen {
                     pstmt2.executeUpdate();
 
                     System.out.print("\n $" + number + " successfully withdrawn, returning to main menu\n\n");
-                    app().getRouter().navigate("/bankscreen");
+                    BankApp.app().getRouter().navigate("/bankscreen");
                     break;
                 case "2":
                     System.out.println("");
-                    app().getRouter().navigate("/withdrawl");
+                    BankApp.app().getRouter().navigate("/withdrawl");
                     break;
                 case "3":
                     System.out.println("\n\n\n\n\n\n[LOG] - Navigating back to main menu");
-                    app().getRouter().navigate("/bankscreen");
+                    BankApp.app().getRouter().navigate("/bankscreen");
                     break;
                 case "4":
                     System.out.println("Exiting application");
-                    app().setAppRunning(false);
+                    BankApp.app().setAppRunning(false);
                     break;
                 default:
                     System.out.println("Invalid selection!");
-                    app().getRouter().navigate("/bankscreen");
+                    BankApp.app().getRouter().navigate("/bankscreen");
             }
         } catch (NumberFormatException e) {
             System.err.println("[INFO] - Input must be numbers only! Please re-enter your amount");
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println("Shutting down application");
-            app().setAppRunning(false);
+            BankApp.app().setAppRunning(false);
         }
     }
 }

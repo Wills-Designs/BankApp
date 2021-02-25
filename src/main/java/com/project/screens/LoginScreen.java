@@ -1,9 +1,9 @@
-package com.revature.screens;
-import com.revature.exceptions.InvalidRequestException;
-import com.revature.users.AppUser;
-import com.revature.users.UserService;
+package com.project.screens;
+import com.project.BankApp;
+import com.project.exceptions.InvalidRequestException;
+import com.project.users.UserService;
+
 import javax.security.sasl.AuthenticationException;
-import static com.revature.BankApp.app;
 
 /** displays the login menu, where a users credentials are validated */
 public class LoginScreen extends Screen {
@@ -32,15 +32,15 @@ public class LoginScreen extends Screen {
             System.out.println("+---------------------+");
             System.out.println("Please provide your login credentials");
             System.out.print("Username: ");
-            username = app().getConsole().readLine();
+            username = BankApp.app().getConsole().readLine();
             System.out.print("Password: ");
-            password = app().getConsole().readLine();
+            password = BankApp.app().getConsole().readLine();
 
             userService.authenticate(username, password);
 
-            if (app().isSessionValid()) {
+            if (BankApp.app().isSessionValid()) {
                 System.out.println("[LOG] - Login successful, navigating to dashboard...");
-                app().getRouter().navigate("/bankscreen");
+                BankApp.app().getRouter().navigate("/bankscreen");
             }
         } catch (InvalidRequestException | AuthenticationException e) {
             System.err.println("[INFO] - Invalid login credentials provided!");
@@ -48,7 +48,7 @@ public class LoginScreen extends Screen {
             e.printStackTrace();
             System.err.println("[SEVERE] - An unexpected exception occurred");
             System.err.println("[FATAL] - Shutting down application");
-            app().setAppRunning(false);
+            BankApp.app().setAppRunning(false);
         }
     }
 }

@@ -1,5 +1,5 @@
-package com.revature.utilities;
-import com.revature.screens.Screen;
+package com.project.utilities;
+import com.project.screens.Screen;
 
 /** class used to route user to different screens */
 public class ScreenRouter {

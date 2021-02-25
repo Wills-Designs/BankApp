@@ -1,4 +1,4 @@
-package com.revature.screens;
+package com.project.screens;
 
 /** the abstract parent class that
  * allows us to set names and routes for all our sub-class screens

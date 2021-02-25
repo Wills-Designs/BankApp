@@ -1,14 +1,13 @@
-package com.revature.screens;
-import com.revature.exceptions.InvalidRequestException;
-import com.revature.users.AppUser;
-import com.revature.users.UserService;
-import com.revature.utilities.ConnectionFactory;
-import javax.security.sasl.AuthenticationException;
+package com.project.screens;
+import com.project.users.AppUser;
+import com.project.users.UserService;
+import com.project.utilities.ConnectionFactory;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import static com.revature.BankApp.app;
+import static com.project.BankApp.app;
 
 /** main menu displayed after user is authenticated */
 public class BankScreen extends Screen {

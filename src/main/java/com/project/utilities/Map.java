@@ -1,4 +1,4 @@
-package com.revature.utilities;
+package com.project.utilities;
 import java.util.Arrays;
 
 /**

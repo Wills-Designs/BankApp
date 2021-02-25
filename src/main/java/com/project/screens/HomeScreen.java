@@ -1,7 +1,6 @@
-package com.revature.screens;
+package com.project.screens;
 
-import java.text.DecimalFormat;
-import static com.revature.BankApp.app;
+import static com.project.BankApp.app;
 
 /** the main screen displayed once the app is initialized,
  *  allows user to login, register, or end the application

@@ -1,13 +1,12 @@
-package com.revature.screens;
-import com.revature.exceptions.InvalidRequestException;
-import com.revature.users.AppUser;
-import com.revature.users.UserService;
-import com.revature.utilities.ConnectionFactory;
-import javax.security.sasl.AuthenticationException;
+package com.project.screens;
+import com.project.BankApp;
+import com.project.users.AppUser;
+import com.project.users.UserService;
+import com.project.utilities.ConnectionFactory;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import static com.revature.BankApp.app;
 
 /** deposit screen, where the user can input amount to be added to account
  *  updates account as well
@@ -27,7 +26,7 @@ public class DepositScreen extends Screen{
      */
     @Override
     public void render() {
-        AppUser user = app().getCurrentSession().getSessionUser();
+        AppUser user = BankApp.app().getCurrentSession().getSessionUser();
 
         String balance = null;
         String depAmount;
@@ -45,7 +44,7 @@ public class DepositScreen extends Screen{
 
             System.out.println("\n\n\n\n\n\nPlease enter the amount to be Deposited : ");
             System.out.print("\n Enter Quantity ->$");
-            depAmount = app().getConsole().readLine();
+            depAmount = BankApp.app().getConsole().readLine();
             double number = Double.parseDouble(depAmount);
             double currBalance = Double.parseDouble(balance);
 
@@ -55,7 +54,7 @@ public class DepositScreen extends Screen{
             System.out.println("[3] Log Off\n\n\n");
             System.out.print("\n Enter Selection -> ");
 
-            String userSelection = app().getConsole().readLine();
+            String userSelection = BankApp.app().getConsole().readLine();
 
             switch (userSelection) {
                 case "1":
@@ -68,19 +67,19 @@ public class DepositScreen extends Screen{
                     pstmt2.executeUpdate();
 
                     System.out.print("\n $" + number + " was successfully deposited, returning to main menu\n\n");
-                    app().getRouter().navigate("/bankscreen");
+                    BankApp.app().getRouter().navigate("/bankscreen");
                     break;
                 case "2":
                     System.out.println("");
-                    app().getRouter().navigate("/deposit");
+                    BankApp.app().getRouter().navigate("/deposit");
                     break;
                 case "3":
                     System.out.println("Exiting application");
-                    app().setAppRunning(false);
+                    BankApp.app().setAppRunning(false);
                     break;
                 default:
                     System.out.println("Invalid selection, returning to main menu!");
-                    app().getRouter().navigate("/bankscreen");
+                    BankApp.app().getRouter().navigate("/bankscreen");
             }
         } catch (NumberFormatException e) {
             System.err.println("[INFO] - Input must be numbers only! Please re-enter your amount");
@@ -88,7 +87,7 @@ public class DepositScreen extends Screen{
         catch (Exception e) {
             e.printStackTrace();
             System.err.println("Shutting down application");
-            app().setAppRunning(false);
+            BankApp.app().setAppRunning(false);
         }
     }
 }

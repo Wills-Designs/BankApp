@@ -1,13 +1,14 @@
-package com.revature.utilities;
+package com.project.utilities;
 
-import com.revature.repos.UserRepository;
-import com.revature.screens.HomeScreen;
-import com.revature.screens.LoginScreen;
-import com.revature.screens.RegisterScreen;
-import com.revature.screens.BankScreen;
-import com.revature.screens.WithdrawScreen;
-import com.revature.screens.DepositScreen;
-import com.revature.users.UserService;
+import com.project.repos.UserRepository;
+import com.project.screens.BankScreen;
+import com.project.screens.HomeScreen;
+import com.project.screens.RegisterScreen;
+import com.project.users.UserService;
+import com.project.screens.LoginScreen;
+import com.project.screens.WithdrawScreen;
+import com.project.screens.DepositScreen;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 

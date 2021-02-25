@@ -1,7 +1,6 @@
-package com.revature.repos;
+package com.project.repos;
 
-import com.revature.utilities.LinkedList;
-import com.revature.utilities.Set;
+import com.project.utilities.LinkedList;
 
 /** the interface for userRepo objects,
  * allows us to save, find, update, and delete

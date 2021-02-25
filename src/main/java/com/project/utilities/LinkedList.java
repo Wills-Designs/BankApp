@@ -1,5 +1,4 @@
-package com.revature.utilities;
-import com.revature.users.AppUser;
+package com.project.utilities;
 
 /** custom implementation of a linkedlist,
  * does not rely on java.util */

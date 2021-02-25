@@ -1,4 +1,4 @@
-package com.revature.exceptions;
+package com.project.exceptions;
 
 /** custom exception that is thrown if the user enters an invalid request */
 public class InvalidRequestException extends RuntimeException{

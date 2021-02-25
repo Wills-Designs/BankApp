@@ -1,16 +1,12 @@
-package com.revature.users;
-import com.revature.exceptions.AuthenticationException;
-import com.revature.exceptions.InvalidRequestException;
-import com.revature.exceptions.ResourcePersistenceException;
-import com.revature.users.AppUser;
-import com.revature.users.UserRole;
-import com.revature.repos.UserRepository;
-import com.revature.utilities.ConnectionFactory;
-import com.revature.utilities.Session;
+package com.project.users;
+import com.project.exceptions.AuthenticationException;
+import com.project.exceptions.InvalidRequestException;
+import com.project.exceptions.ResourcePersistenceException;
+import com.project.repos.UserRepository;
+import com.project.utilities.ConnectionFactory;
+import com.project.utilities.Session;
 
-import java.sql.Connection;
-
-import static com.revature.BankApp.app;
+import static com.project.BankApp.app;
 
 /** class that validates all the data a user inputs,
  *  ensures to trim white space and check that no values are null */

@@ -1,7 +1,8 @@
-package com.revature.utilities;
+package com.project.utilities;
 
-import com.revature.users.AppUser;
-import com.revature.users.UserRole;
+import com.project.users.AppUser;
+import com.project.users.UserRole;
+
 import java.sql.Connection;
 
 /** class creates a session/connection that keeps the user logged in */

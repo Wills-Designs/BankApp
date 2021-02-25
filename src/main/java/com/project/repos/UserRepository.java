@@ -1,14 +1,13 @@
-package com.revature.repos;
+package com.project.repos;
 
-import com.revature.users.AppUser;
-import com.revature.users.UserRole;
-import com.revature.utilities.ConnectionFactory;
-import com.revature.utilities.LinkedList;
-import com.revature.utilities.Set;
+import com.project.users.AppUser;
+import com.project.users.UserRole;
+import com.project.utilities.ConnectionFactory;
+import com.project.utilities.LinkedList;
 
 import java.sql.*;
 
-import static com.revature.BankApp.app;
+import static com.project.BankApp.app;
 
 /**
  * allows us to connect to the database and do various tasks

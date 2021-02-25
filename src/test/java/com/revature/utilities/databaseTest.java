@@ -1,5 +1,7 @@
 package com.revature.utilities;
 
+import com.project.utilities.ConnectionFactory;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 
